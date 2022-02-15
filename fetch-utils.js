@@ -9,6 +9,15 @@ export async function fetchPosts() {
     return checkError(resp);
 } 
 
+export function getUser() {
+    return client.auth.session() && client.
+        auth.session().user;
+}
+
+
+
+
 function checkError({ data, error }) {
     return error ? console.error(error) : data;
 }
+
