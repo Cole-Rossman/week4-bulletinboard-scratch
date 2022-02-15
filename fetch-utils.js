@@ -18,9 +18,6 @@ export function getUser() {
         auth.session().user;
 }
 
-export async function redirectToLogin() {
-    location.replace('./authentication-page');
-}
 
 export async function signInUser(email, password) {
     const resp = await client.auth.signIn({ email, password });
@@ -34,3 +31,8 @@ export async function signUpUser(email, password) {
     return resp;
 }
 
+export async function redirectIfLoggedIn() {
+    if (await getUser()) {
+        location.replace('../');
+    }
+}
