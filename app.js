@@ -1,8 +1,14 @@
-// import functions and grab DOM elements
+import { fetchPosts } from './fetch-utils.js';
+import { renderPosts } from './render-utils.js';
 
-// let state
+const stickyNotes = document.getElementById('sticky-notes');
 
-// set event listeners 
-  // get user input
-  // use user input to update state 
-  // update DOM to reflect the new state
+async function getPosts() {
+    const posts = await fetchPosts();
+
+    for (let post of posts) {
+        const list = renderPosts(post);
+        stickyNotes.append(list);
+    }
+}
+getPosts();
