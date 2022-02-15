@@ -22,8 +22,15 @@ export async function redirectToLogin() {
     location.replace('./authentication-page');
 }
 
+export async function signInUser(email, password) {
+    const resp = await client.auth.signIn({ email, password });
+
+    return resp;
+}
+
 export async function signUpUser(email, password) {
     const resp = await client.auth.signUp({ email, password });
 
     return resp;
 }
+
