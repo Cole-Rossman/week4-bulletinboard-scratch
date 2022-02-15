@@ -14,7 +14,9 @@ export function getUser() {
         auth.session().user;
 }
 
-
+export async function redirectToLogin() {
+    location.replace('./authentication-page');
+}
 
 
 function checkError({ data, error }) {

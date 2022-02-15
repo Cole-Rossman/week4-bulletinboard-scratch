@@ -1,7 +1,8 @@
-import { fetchPosts } from './fetch-utils.js';
+import { fetchPosts, redirectToLogin } from './fetch-utils.js';
 import { renderPosts } from './render-utils.js';
 
 const stickyNotes = document.getElementById('sticky-notes');
+const loginButton = document.getElementById('login-button');
 
 async function getPosts() {
     const posts = await fetchPosts();
@@ -12,3 +13,7 @@ async function getPosts() {
     }
 }
 getPosts();
+
+loginButton.addEventListener('click', async () => {
+    await redirectToLogin();
+});
