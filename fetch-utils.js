@@ -9,6 +9,10 @@ export async function fetchPosts() {
     return checkError(resp);
 } 
 
+function checkError({ data, error }) {
+    return error ? console.error(error) : data;
+}
+
 export function getUser() {
     return client.auth.session() && client.
         auth.session().user;
@@ -18,8 +22,8 @@ export async function redirectToLogin() {
     location.replace('./authentication-page');
 }
 
+export async function signUpUser(email, password) {
+    const resp = await client.auth.signUp({ email, password });
 
-function checkError({ data, error }) {
-    return error ? console.error(error) : data;
+    return resp;
 }
-
