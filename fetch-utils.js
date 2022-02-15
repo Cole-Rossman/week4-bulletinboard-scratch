@@ -36,3 +36,13 @@ export async function redirectIfLoggedIn() {
         location.replace('../');
     }
 }
+
+export async function loginRedirect() {
+    location.replace('./authentication-page');
+}
+
+export async function logout() {
+    await client.auth.signOut();
+
+    return window.location.href = './';
+}
