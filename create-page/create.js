@@ -1,4 +1,4 @@
-import { createPost, logout, checkAuth } from '../fetch-utils.js';
+import { createPost, logout, checkAuth, homeRedirect } from '../fetch-utils.js';
 
 checkAuth();
 
@@ -11,16 +11,20 @@ const createForm = document.getElementById('create-form');
 createForm.addEventListener('submit', async (e) => {
     e.preventDefault();
     const data = new FormData(createForm);
-    const newPost = {
+    
+    await createPost({
         title: data.get('title'),
         description: data.get('description'),
         contact: data.get('contact'),
-    };
-    const resp = await createPost(newPost);
-    console.log(resp);
+    });
+    
 });
 
 logoutButton.addEventListener('click', async () => {
     await logout();
 
+});
+
+homeButton.addEventListener('click', async () => {
+    await homeRedirect();
 });

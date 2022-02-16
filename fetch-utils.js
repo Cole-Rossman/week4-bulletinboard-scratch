@@ -44,6 +44,10 @@ export async function redirectIfLoggedIn() {
     }
 }
 
+export async function homeRedirect() {
+    location.replace('../');
+}
+
 export async function loginRedirect() {
     location.replace('./authentication-page');
 }
