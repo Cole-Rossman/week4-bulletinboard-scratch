@@ -47,3 +47,8 @@ export async function logout() {
     return window.location.href = './';
 }
 
+export async function createPost(post) {
+    const resp = await client.from('posts').insert(post);
+
+    return checkError(resp);
+}
