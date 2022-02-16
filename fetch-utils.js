@@ -18,6 +18,13 @@ export function getUser() {
         auth.session().user;
 }
 
+export function checkAuth() {
+    const user = getUser();
+    if (!user) {
+        location.replace('/');
+    }
+}
+
 
 export async function signInUser(email, password) {
     const resp = await client.auth.signIn({ email, password });

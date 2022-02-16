@@ -11,7 +11,7 @@ const signUpPassword = document.getElementById('sign-up-password');
 
 loginForm.addEventListener('submit', async (e) => {
     e.preventDefault();
-    console.log(loginEmail.value, loginPassword.value);
+    // console.log(loginEmail.value, loginPassword.value);
     await signInUser(loginEmail.value, loginPassword.value);
     
     redirectIfLoggedIn();
@@ -19,7 +19,7 @@ loginForm.addEventListener('submit', async (e) => {
 
 signUpForm.addEventListener('submit', async (e) => {
     e.preventDefault();
-    console.log(signUpEmail.value, signUpPassword.value);
+    // console.log(signUpEmail.value, signUpPassword.value);
     await signUpUser(signUpEmail.value, signUpPassword.value);
 
     redirectIfLoggedIn();
