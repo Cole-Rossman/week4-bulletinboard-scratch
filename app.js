@@ -4,6 +4,7 @@ import { renderPosts } from './render-utils.js';
 const stickyNotes = document.getElementById('sticky-notes');
 const loginButton = document.getElementById('login-button');
 const logoutButton = document.getElementById('logout');
+const createButton = document.getElementById('create-button');
 
 const user = getUser();
 if (user) {
@@ -23,10 +24,14 @@ async function getPosts() {
 getPosts();
 
 loginButton.addEventListener('click', async () => {
-    loginRedirect();
+    await loginRedirect();
 });
 
 logoutButton.addEventListener('click', async () => {
     await logout();
-    console.log(logout);
+
+});
+
+createButton.addEventListener('click', async () => {
+  
 });
