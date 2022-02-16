@@ -17,7 +17,7 @@ createForm.addEventListener('submit', async (e) => {
         description: data.get('description'),
         contact: data.get('contact'),
     });
-    
+    createForm.reset();
 });
 
 logoutButton.addEventListener('click', async () => {

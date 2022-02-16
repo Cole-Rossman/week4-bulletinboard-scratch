@@ -1,4 +1,4 @@
-import { fetchPosts, getUser, loginRedirect, logout } from './fetch-utils.js';
+import { fetchPosts, getUser, loginRedirect, logout, createRedirect } from './fetch-utils.js';
 import { renderPosts } from './render-utils.js';
 
 const stickyNotes = document.getElementById('sticky-notes');
@@ -33,5 +33,6 @@ logoutButton.addEventListener('click', async () => {
 });
 
 createButton.addEventListener('click', async () => {
-  
+    await createRedirect();
+
 });

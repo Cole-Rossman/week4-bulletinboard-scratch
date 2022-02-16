@@ -63,3 +63,7 @@ export async function createPost(post) {
 
     return checkError(resp);
 }
+
+export async function createRedirect() {
+    location.replace('./create-page');
+}
