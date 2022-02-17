@@ -1,0 +1,51 @@
+@media (min-width: 800px) {
+    .auth-main {
+        width: 100%;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr 1fr;
+        grid-template-areas: 
+        'login sign-up'
+        ;
+        margin: 20px;
+        padding: 10px;
+    }
+}
+
+.main-login {
+    border: 8px blueviolet solid;
+    padding: 40px;
+    margin: 60px;
+    
+}
+
+.main-sign-up {
+    border: 8px red solid;
+    padding: 40px;
+    margin: 60px;
+}
+
+#sign-up {
+    display: flex;
+    flex-direction: column;
+}
+
+#login {
+    display: flex;
+    flex-direction: column;
+    
+}
+
+button {
+    margin: 10px;
+    width: 80px;
+}
+
+body {
+    background-color: antiquewhite;
+}
+
+input {
+    width: 200px;
+    height: 20px;
+}
