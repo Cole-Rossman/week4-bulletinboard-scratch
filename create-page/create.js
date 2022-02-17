@@ -18,6 +18,7 @@ createForm.addEventListener('submit', async (e) => {
         contact: data.get('contact'),
     });
     createForm.reset();
+    await homeRedirect();
 });
 
 logoutButton.addEventListener('click', async () => {
