@@ -68,5 +68,7 @@ export async function createRedirect() {
     const user = getUser();
     if (!user) {
         location.replace('./authentication-page');
-    } else location.replace('./create-page');
+    } else {
+        location.replace('./create-page');
+    }
 }
